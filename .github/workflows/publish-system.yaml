@@ -1,7 +1,6 @@
 name: "Publish System"
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
