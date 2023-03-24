@@ -37,6 +37,6 @@ jobs:
       - name: Publish anonymized repository
         working-directory: /tmp/anonymized
         run: |
-          git checkout ${{ github.ref_name }}
+          git checkout main
           git remote add origin git@github.com:ictunion/main-website-public.git
-          git push --force origin ${{ github.ref_name }}
+          git push --force origin main
