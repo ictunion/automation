@@ -16,6 +16,7 @@ jobs:
         with:
           repository: ictunion/main-website
           fetch-depth: 0
+          ref: main
 
       # See documentation for the action
       - name: Install SSH key
