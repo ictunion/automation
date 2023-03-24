@@ -1,4 +1,4 @@
-name: "Publish Website"
+name: "Publish System"
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
         with:
-          repository: ictunion/main-website
+          repository: ictunion/main-system
           fetch-depth: 0
           ref: main
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
@@ -34,5 +34,5 @@ jobs:
         working-directory: /tmp/anonymized
         run: |
           git checkout main
-          git remote add origin git@github.com:ictunion/main-website-public.git
+          git remote add origin git@github.com:ictunion/main-system-public.git
           git push --force origin main

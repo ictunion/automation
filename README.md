@@ -8,7 +8,7 @@ in any way.
 
 ## Running Actions
 
-Actions could be ran via web interface - see [Actions](actions).
+Actions could be ran via web interface - see [Actions](https://github.com/ictunion/automation/actions).
 
 Alternatively you could use [github cli](https://cli.github.com/) utility
 
@@ -20,4 +20,12 @@ To publish website run
 
 ```
 $ gh workflow run publish-website.yaml
+```
+
+## Publish System (backend)
+
+To publish backend system run
+
+```
+$ gh workflow run publish-system.yaml
 ```
