@@ -29,3 +29,7 @@ jobs:
 
       - name: Build wiki
         run: nix build
+
+      - name: Deploy wiki
+        run: |
+          nix-shell -p rsync --run rsync -rt result/var wiki@ictunion.cz:/home/wiki
