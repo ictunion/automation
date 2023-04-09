@@ -38,7 +38,7 @@ Deploy new wiki version (from main branch) to the server
 $ gh workflow run publish-wiki.yaml
 ```
 
-**This task is also ran by cron every day at 00:30**
+**This task is also ran by cron every day at 01:30 UTC**
 
 ## Nix
 
