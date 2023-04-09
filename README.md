@@ -1,14 +1,14 @@
 # Automation
 
-This repository servsers purpose of consolidation of various automated tasks we run.
+This repository serves purpose of consolidation of various automated tasks we run.
 
-__Rights to this repository (indirectly) gives permissions required by the actions themselve.__
-Write permission gives person complete control as that allows for changing any action
-in any way.
+__Rights to this repository gives (indirectly) permissions required by actions themselves.__
+Write permission gives person complete control since they can just change worflows to do what ever they want.
 
 ## Running Actions
 
-Actions could be ran via web interface - see [Actions](https://github.com/ictunion/automation/actions).
+Actions could be ran via web interface - see [Actions](https://github.com/ictunion/automation/actions)
+and [GitHub's documentation](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
 
 Alternatively you could use [github cli](https://cli.github.com/) utility
 
@@ -38,7 +38,7 @@ Deploy new wiki version (from main branch) to the server
 $ gh workflow run publish-wiki.yaml
 ```
 
-**This task is also ran by cron every day at midnight.**
+**This task is also ran by cron every day at 00:30**
 
 ## Nix
 
