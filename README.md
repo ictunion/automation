@@ -29,3 +29,25 @@ To publish backend system run
 ```
 $ gh workflow run publish-system.yaml
 ```
+
+## Publish Wiki
+
+Deploy new wiki version (from main branch) to the server
+
+```
+$ gh workflow run publish-wiki.yaml
+```
+
+## Nix
+
+This project defines [`shell.nix`] which could be used as following
+
+```
+$ nix-shell --run 'gh workflow run publish-wiki.yaml'
+```
+
+or you can simply enter interactive shell from which you can run all the gh commands:
+
+```
+$ nix-shell
+```
