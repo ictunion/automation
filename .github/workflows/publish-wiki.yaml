@@ -26,6 +26,8 @@ jobs:
 
       - name: Install nix
         uses: cachix/install-nix-action@v18
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Build wiki
         run: nix build
