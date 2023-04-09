@@ -34,4 +34,4 @@ jobs:
 
       - name: Deploy wiki
         run: |
-          nix-shell -p rsync --run 'rsync -rt result/var wiki@ictunion.cz:/var/wiki'
+          nix-shell -p rsync --run 'rsync -rt result/var wiki@ictunion.cz:/home/wiki'
