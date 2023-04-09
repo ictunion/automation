@@ -38,6 +38,8 @@ Deploy new wiki version (from main branch) to the server
 $ gh workflow run publish-wiki.yaml
 ```
 
+**This task is also ran by cron every day at midnight.**
+
 ## Nix
 
 This project defines [`shell.nix`] which could be used as following
