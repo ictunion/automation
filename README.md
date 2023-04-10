@@ -12,9 +12,7 @@ and [GitHub's documentation](https://docs.github.com/en/actions/managing-workflo
 
 Alternatively you could use [github cli](https://cli.github.com/) utility
 
-__ACTIONS:__
-
-## Publish Website
+### Publish Website
 
 To publish website run
 
@@ -22,7 +20,7 @@ To publish website run
 $ gh workflow run publish-website.yaml
 ```
 
-## Publish System (backend)
+### Publish System (backend)
 
 To publish backend system run
 
@@ -30,7 +28,7 @@ To publish backend system run
 $ gh workflow run publish-system.yaml
 ```
 
-## Publish Wiki
+### Publish Wiki
 
 Deploy new wiki version (from main branch) to the server
 
