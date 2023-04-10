@@ -69,3 +69,35 @@ jobs:
       - name: Deploy main to testing
         run: |
           nix-shell -p rsync --run 'rsync -rt result/var website@ictunion.cz:/home/website/testing'
+
+  deploy-production:
+    needs: publish-code
+    runs-on: ubuntu-latest
+    steps:
+      # See documentation for the action
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.GIT_SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          repository: ictunion/main-website-public
+          ref: production
+          ssh-key: ${{ secrets.GIT_SSH_KEY }}
+          ssh-known-hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Build website
+        run: nix build
+
+      - name: Deploy production tag to production
+        run: |
+          nix-shell -p rsync --run 'rsync -rt result/var website@ictunion.cz:/home/website/production'
