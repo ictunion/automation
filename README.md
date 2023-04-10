@@ -2,8 +2,8 @@
 
 This repository serves purpose of consolidation of various automated tasks we run.
 
-__Rights to this repository gives (indirectly) permissions required by actions themselves.__
-Write permission gives person complete control since they can just change worflows to do what ever they want.
+> __Rights to this repository gives (indirectly) permissions required by actions themselves.__
+> Write permission gives person complete control since they can just change worflows to do what ever they want.
 
 ## Running Actions
 
