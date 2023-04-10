@@ -7,7 +7,7 @@ This repository serves purpose of consolidation of various automated tasks we ru
 
 ## Status
 
-Project formatting check [![Verify Formatting](https://github.com/ictunion/automation/actions/workflows/verify-formatting.yaml/badge.svg?event=push)](https://github.com/ictunion/automation/actions/workflows/verify-formatting.yaml)
+| Project formatting check | [![Verify Formatting](https://github.com/ictunion/automation/actions/workflows/verify-formatting.yaml/badge.svg?event=push)](https://github.com/ictunion/automation/actions/workflows/verify-formatting.yaml) |
 
 | workflow                 | job                  | description                     | latest schedule                                                                                                                                                                                                | latest dispatch                                                                                                                                                                                                                  |
 |--------------------------|----------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
