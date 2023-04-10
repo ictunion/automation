@@ -12,11 +12,11 @@ This repository serves purpose of consolidation of various automated tasks we ru
 
 Job statuses:
 
-| workflow                 | job                  | description                     | latest schedule                                                                                                                                                                                                | latest dispatch                                                                                                                                                                                                                  |
-|--------------------------|----------------------|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **publish-website.yaml** | **publish-code**     | Publish website source          | ---                                                                                                                                                                                                            | [![Publish Website](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml) |
-| **publish-system.yaml**  | **publish-code**     | Publish system (backend) source | ---                                                                                                                                                                                                            | [![Publish System](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml)    |
-| **publish-wiki.yaml**    | **deploy-to-server** | Deploy wiki content to server   | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=schedule)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml) | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml)          |
+| workflow                 | description                     | latest schedule                                                                                                                                                                                                         | latest dispatch                                                                                                                                                                                                                  |
+|--------------------------|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **publish-website.yaml** | Publish website source          | [![Publish Website](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml/badge.svg?branch=main&event=schedule)](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml) | [![Publish Website](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml) |
+| **publish-system.yaml**  | Publish system (backend) source | ---                                                                                                                                                                                                                     | [![Publish System](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml)    |
+| **publish-wiki.yaml**    | Deploy wiki content to server   | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=schedule)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml)          | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml)          |
 
 ## Running Actions Manually
 
@@ -27,15 +27,17 @@ Alternatively you could use [github cli](https://cli.github.com/) utility
 
 ### Publish Website
 
-To publish website run
+To publish website and deploy both testing and production version run:
 
 ```
 $ gh workflow run publish-website.yaml
 ```
 
+**This task is also ran by cron every day at 10:00 and 22:00 UTC.**
+
 ### Publish System (backend)
 
-To publish backend system run
+To publish backend system run:
 
 ```
 $ gh workflow run publish-system.yaml
@@ -43,17 +45,17 @@ $ gh workflow run publish-system.yaml
 
 ### Publish Wiki
 
-Deploy new wiki version (from main branch) to the server
+Deploy new wiki version (from main branch) to the server:
 
 ```
 $ gh workflow run publish-wiki.yaml
 ```
 
-**This task is also ran by cron every day at 01:30 UTC**
+**This task is also ran by cron every day at 01:30 UTC.**
 
 ## Nix
 
-This project defines [`shell.nix`] which could be used as following
+This project defines [`shell.nix`](shell.nix) which could be used as following:
 
 ```
 $ nix-shell --run 'gh workflow run publish-wiki.yaml'
