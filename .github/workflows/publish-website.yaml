@@ -29,14 +29,14 @@ jobs:
         uses: cachix/install-nix-action@v18
 
       - name: Create anonymized repo
-        run: nix run github:ictunion/git-anonymize -- . -o /tmp/anonymized -n 'ICT Guerrilla' -e 'ictguerrilla@proton.me'
+        run: nix run github:ictunion/git-anonymize -- . -o /tmp/anonymized -n 'ICT Guerrilla' -e 'ictguerrilla@proton.me' -r HEAD production
 
       - name: Publish anonymized repository
         working-directory: /tmp/anonymized
         run: |
           git checkout main
           git remote add origin git@github.com:ictunion/main-website-public.git
-          git push --force origin main
+          git push --force --follow-tags origin main
 
   deploy-testing:
     needs: publish-code
