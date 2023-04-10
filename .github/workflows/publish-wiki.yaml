@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish-wiki:
+  deploy-to-server:
     runs-on: ubuntu-latest
     steps:
       # See documentation for the action
