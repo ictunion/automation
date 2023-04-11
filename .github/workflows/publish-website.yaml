@@ -39,7 +39,7 @@ jobs:
           git checkout main
           git remote add origin git@github.com:ictunion/main-website-public.git
           git push --force origin main
-          git push origin production:production
+          git push origin production:production --force
 
   deploy-testing:
     needs: publish-code
