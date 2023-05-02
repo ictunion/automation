@@ -3,7 +3,7 @@ name: "Publish Website"
 on:
   schedule:
     # Run every day at 01:30 UTC
-    - cron: '0 10,22 * * *'
+    - cron: '0 2,14 * * *'
   workflow_dispatch:
 
 jobs:
