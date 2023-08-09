@@ -65,6 +65,9 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
+      - name: Current time
+        run: date +%c
+
       - name: Build website
         run: nix build
 
@@ -96,6 +99,9 @@ jobs:
         uses: cachix/install-nix-action@v18
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Current time
+        run: date +%c
 
       - name: Build website
         run: nix build
