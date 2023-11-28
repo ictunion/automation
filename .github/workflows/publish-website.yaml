@@ -104,7 +104,9 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix build
+        run: |
+          ls -la
+          nix build
 
       - name: Deploy production tag to production
         run: |
