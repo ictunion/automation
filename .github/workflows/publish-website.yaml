@@ -69,11 +69,11 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix build
+        run: nix run
 
       - name: Deploy main to testing
         run: |
-          nix-shell -p rsync --run 'rsync -rt result/var website@ictunion.cz:/home/website/testing'
+          nix-shell -p rsync --run 'rsync -rtc -I public/ website@ictunion.cz:/home/website/testing/var/www'
 
   deploy-production:
     needs: publish-code
@@ -103,8 +103,8 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix build
+        run: nix run
 
-      - name: Deploy production tag to production
+      - name: Deploy main to production
         run: |
-          nix-shell -p rsync --run 'rsync -rt result/var website@ictunion.cz:/home/website/production'
+          nix-shell -p rsync --run 'rsync -rtc public/ website@ictunion.cz:/home/website/production/var/www'
