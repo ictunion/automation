@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 2,14 * * *'
   workflow_dispatch:
+  push:
 
 jobs:
   publish-code:
@@ -69,11 +70,11 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix build
+        run: nix run
 
       - name: Deploy main to testing
         run: |
-          nix-shell -p rsync --run 'rsync -rt result/var website@ictunion.cz:/home/website/testing'
+          nix-shell -p rsync --run 'rsync -rt public website@ictunion.cz:/home/website/testing/www'
 
   deploy-production:
     needs: publish-code
