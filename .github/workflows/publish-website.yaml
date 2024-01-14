@@ -69,7 +69,7 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix build
+        run: nix build --impure
 
       - name: Deploy main to testing
         run: |
