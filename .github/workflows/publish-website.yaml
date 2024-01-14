@@ -66,6 +66,7 @@ jobs:
 
       # Nix
       - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Current time
         run: date +%c
