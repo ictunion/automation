@@ -108,4 +108,4 @@ jobs:
 
       - name: Deploy main to production
         run: |
-          nix-shell -p rsync --run 'rsync -rtc public/ website@ictunion.cz:/home/website/testing/var/www'
+          nix-shell -p rsync --run 'rsync -rtc public/ website@ictunion.cz:/home/website/production/var/www'
