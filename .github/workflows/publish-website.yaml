@@ -80,6 +80,7 @@ jobs:
   deploy-production:
     needs: publish-code
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       # See documentation for the action
       - name: Install SSH key
