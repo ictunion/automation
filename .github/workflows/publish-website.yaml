@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: '0 2,14 * * *'
   workflow_dispatch:
-  push:
 
 jobs:
   publish-code:
