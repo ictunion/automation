@@ -73,7 +73,7 @@ jobs:
 
       - name: Build website
         run: |
-          nix build
+          nix-build
           cat result/var/www/en/events/index.html
 
       - name: Deploy main to testing
