@@ -9,6 +9,7 @@ on:
 jobs:
   publish-code:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       # See documentation for the action
       - name: Install SSH key
@@ -23,7 +24,7 @@ jobs:
         with:
           repository: ictunion/main-website
           fetch-depth: 0
-          ref: debug-hack
+          ref: main
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
           ssh-known-hosts: ${{ secrets.KNOWN_HOSTS }}
 
@@ -43,7 +44,7 @@ jobs:
           git push origin production:production --force
 
   deploy-testing:
-    needs: publish-code
+    # needs: publish-code
     runs-on: ubuntu-latest
     steps:
       # See documentation for the action
@@ -57,8 +58,9 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
         with:
-          repository: ictunion/main-website-public
-          ref: main
+          repository: ictunion/main-website
+          fetch-depth: 0
+          ref: debug-hack
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
           ssh-known-hosts: ${{ secrets.KNOWN_HOSTS }}
 
