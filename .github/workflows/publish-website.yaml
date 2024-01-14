@@ -60,7 +60,7 @@ jobs:
         with:
           repository: ictunion/main-website
           fetch-depth: 0
-          ref: debug-hack
+          ref: main
           ssh-key: ${{ secrets.GIT_SSH_KEY }}
           ssh-known-hosts: ${{ secrets.KNOWN_HOSTS }}
 
