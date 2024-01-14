@@ -74,7 +74,7 @@ jobs:
 
       - name: Deploy main to testing
         run: |
-          nix-shell -p rsync --run 'rsync -rt public website@ictunion.cz:/home/website/testing/var/www'
+          nix-shell -p rsync --run 'rsync -rt public/ website@ictunion.cz:/home/website/testing/var/www'
 
   deploy-production:
     needs: publish-code
