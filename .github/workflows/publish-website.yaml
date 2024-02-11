@@ -69,7 +69,7 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix run
+        run: nix run . -- --baseURL=https://testing.ictunion.cz
 
       - name: Deploy main to testing
         run: |
@@ -103,7 +103,7 @@ jobs:
         run: date +%c
 
       - name: Build website
-        run: nix run
+        run: nix run .  --baseURL=https://ictunion.cz
 
       - name: Deploy main to production
         run: |
