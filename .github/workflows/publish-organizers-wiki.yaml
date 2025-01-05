@@ -1,4 +1,4 @@
-name: "Publish Wiki"
+name: "Publish Organizers Wiki"
 
 on:
   schedule:
@@ -31,9 +31,9 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Build wiki
+      - name: Build organizers wiki
         run: nix build
 
-      - name: Deploy wiki
+      - name: Deploy organizers wiki
         run: |
-          nix-shell -p rsync --run 'rsync -rt result/var wiki@ictunion.cz:/home/organizers-wiki'
+          nix-shell -p rsync --run 'rsync -rt result/var organizers-wiki@ictunion.cz:/home/organizers-wiki'
