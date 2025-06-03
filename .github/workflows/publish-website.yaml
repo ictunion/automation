@@ -28,7 +28,6 @@ jobs:
 
       # Nix
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Create anonymized repo
         run: nix run github:ictunion/git-anonymize -- . -o /tmp/anonymized -n 'ICT Guerrilla' -e 'ictguerrilla@proton.me' -r HEAD production
@@ -63,7 +62,6 @@ jobs:
 
       # Nix
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Current time
         run: date +%c
@@ -97,7 +95,6 @@ jobs:
 
       # Nix
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Current time
         run: date +%c
