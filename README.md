@@ -17,6 +17,7 @@ Job statuses:
 | **publish-website.yaml** | Publish website source          | [![Publish Website](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml/badge.svg?branch=main&event=schedule)](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml) | [![Publish Website](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-website.yaml) |
 | **publish-system.yaml**  | Publish system (backend) source | ---                                                                                                                                                                                                                     | [![Publish System](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-system.yaml)    |
 | **publish-wiki.yaml**    | Deploy wiki content to server   | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=schedule)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml)          | [![Publish Wiki](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-wiki.yaml)          |
+| **publish-paytransparency-website.yaml** | Deploy pay transparency website to server | --- | [![Publish Pay Transparency Website](https://github.com/ictunion/automation/actions/workflows/publish-paytransparency-website.yaml/badge.svg?branch=main&event=workflow_dispatch)](https://github.com/ictunion/automation/actions/workflows/publish-paytransparency-website.yaml) |
 
 ## Running Actions Manually
 
@@ -52,6 +53,14 @@ $ gh workflow run publish-wiki.yaml
 ```
 
 **This task is also ran by cron every day at 01:30 UTC.**
+
+### Publish Pay Transparency Website
+
+Deploy new pay transparency website version (from main branch) to the server:
+
+```
+$ gh workflow run publish-paytransparency-website.yaml
+```
 
 ## Nix
 
